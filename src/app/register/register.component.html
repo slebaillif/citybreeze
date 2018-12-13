@@ -1,0 +1,92 @@
+<mat-toolbar><span>Registration</span></mat-toolbar>
+<mat-card class="my-card">
+  <mat-card-content>
+
+
+    <form class="my-form">
+      <mat-horizontal-stepper linear>
+        <mat-step label="Personal details">
+
+
+          <mat-form-field class="my-field">
+            <input matInput [(ngModel)]="newUser.login" name="login" placeholder="Login" required/>
+          </mat-form-field>
+
+          <mat-form-field class="my-field">
+            <input matInput [(ngModel)]="newUser.firstName" name="firstName" placeholder="First Name" required/>
+          </mat-form-field>
+          <mat-form-field class="my-field">
+            <input matInput [(ngModel)]="newUser.lastName" name="lastName" placeholder="Last Name" required/>
+          </mat-form-field>
+          <mat-form-field class="my-field">
+            <input matInput [(ngModel)]="newUser.email" name="email" placeholder="Email" required/>
+          </mat-form-field>
+          <mat-form-field class="my-field">
+            <mat-label>Password</mat-label>
+            <input matInput [(ngModel)]="newUser.password" placeholder="Password" name="password">
+          </mat-form-field>
+          <section class="example-section">
+            <label class="example-margin">Gender:</label>
+            <mat-radio-group [(ngModel)]="newUser.gender">
+              <mat-radio-button class="example-margin" value="after">Male</mat-radio-button>
+              <mat-radio-button class="example-margin" value="before">Female</mat-radio-button>
+              <mat-radio-button class="example-margin" value="before">Other</mat-radio-button>
+            </mat-radio-group>
+          </section>
+
+          <mat-form-field class="my-field">
+            <mat-label>Date of Birth</mat-label>
+            <input matInput [(ngModel)]="newUser.dateOfBirth" [matDatepicker]="picker" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <div class="bottom-stepper">
+            <button mat-raised-button matStepperNext type="button" color="primary">Next</button>
+          </div>
+        </mat-step>
+        <mat-step label="Address">
+          <mat-form-field class="my-field">
+            <input matInput [(ngModel)]="newUser.addressLine1" name="addressLine1" placeholder="Address" required/>
+          </mat-form-field>
+          <mat-form-field class="my-field">
+            <input matInput [(ngModel)]="newUser.addressLine2" name="addressLine2" placeholder="Address line 2"/>
+          </mat-form-field>
+          <mat-form-field class="my-field">
+            <input matInput [(ngModel)]="newUser.postCode" name="postCode" placeholder="Post Code"/>
+          </mat-form-field>
+          <mat-form-field class="my-field">
+            <input matInput [(ngModel)]="newUser.city" name="city" placeholder="City"/>
+          </mat-form-field>
+          <mat-form-field class="my-field">
+            <input matInput [(ngModel)]="newUser.country" name="country" placeholder="Country"/>
+          </mat-form-field>
+          <div class="bottom-stepper">
+            <button mat-raised-button matStepperPrevious type="button" color="primary">Previous</button>
+            <button class="button-space" mat-raised-button matStepperNext type="button" color="primary">Next</button>
+          </div>
+        </mat-step>
+        <mat-step label="Contact preferences">
+          <mat-form-field class="my-field">
+            <input matInput [(ngModel)]="newUser.phoneNumber" name="phoneNumber" placeholder="Phone Number"/>
+          </mat-form-field>
+          <section class="example-section">
+            <mat-checkbox >Allow contact for promo purposes</mat-checkbox><br>
+            <mat-checkbox>Terms and conditions</mat-checkbox>
+          </section>
+          <div class="bottom-stepper">
+            <button mat-raised-button matStepperPrevious type="button" color="primary">Previous</button>
+            <button class="button-space" mat-raised-button matStepperNext type="button" color="primary">Next</button>
+          </div>
+        </mat-step>
+        <mat-step label="Confirm">
+          <button mat-raised-button (click)="onSubmit()" color="primary">REGISTER</button>
+          <div>{{errorMessage}}</div>
+        </mat-step>
+
+      </mat-horizontal-stepper>
+    </form>
+
+  </mat-card-content>
+
+
+</mat-card>

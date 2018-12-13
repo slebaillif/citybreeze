@@ -1,0 +1,23 @@
+<mat-toolbar><span>Login</span></mat-toolbar>
+<mat-card class="my-card">
+  <mat-card-content>
+
+
+    <form class="my-form">
+
+      <mat-form-field class="my-field">
+        <input matInput [(ngModel)]="newUser.login" name="login" placeholder="Login" required/>
+      </mat-form-field>
+
+      <mat-form-field class="my-field">
+        <input matInput [(ngModel)]="newUser.password" name="password" placeholder="Password" required/>
+      </mat-form-field>
+
+      <br>
+      <button mat-raised-button (click)="onSubmit()" color="primary">LOGIN</button>
+    </form>
+
+  </mat-card-content>
+
+
+</mat-card>

@@ -1,0 +1,15 @@
+.foot{
+  margin-top: 200px;
+  width:100%;
+  background-color: black;
+}
+
+.fill-remaining-space {
+  /* This fills the remaining space, by using flexbox.
+     Every toolbar row uses a flexbox row layout. */
+  flex: 0.5 1 auto;
+}
+
+span, img{
+  padding:10px;
+}
